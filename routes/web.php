@@ -34,3 +34,5 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+Route::get('/chat', [App\Http\Controllers\ChatController::class, 'index']);
+Route::post('/chat', [App\Http\Controllers\ChatController::class, 'sendMessage']);

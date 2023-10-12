@@ -14,7 +14,7 @@ class PostSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    /*public function run()
     {
         DB::table('posts')->insert([
                 'title' => '命名の心得',
@@ -23,4 +23,5 @@ class PostSeeder extends Seeder
                 'updated_at' => new DateTime(),
          ]);
     }
+    */
 }
