@@ -5,6 +5,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\MessageController;
 
 
 Route::get('/chat', [PostController::class,'chat'])->middleware("auth");
@@ -36,3 +37,12 @@ require __DIR__.'/auth.php';
 
 Route::get('/chat', [App\Http\Controllers\ChatController::class, 'index']);
 Route::post('/chat', [App\Http\Controllers\ChatController::class, 'sendMessage']);
+
+Route::get('/test', [MessageController::class,'test'])->middleware("auth");
+Route::post('/add', 'App\Http\Controllers\MessageController@add');
+
+Route::get('/room', [MessageController::class,'room'])->middleware("auth");
+Route::controller(MessageController::class)->middleware(['auth'])->group(function(){
+    Route::get('/room', 'room')->name('room');
+    Route::post('/room/{chats}', 'room')->name('room');
+});
