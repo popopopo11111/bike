@@ -8,9 +8,9 @@
          <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
      </head>
      <body>
-         <h1>Blog Name</h1>
+         <h1>投稿</h1>
          <div class='posts'>
-         <a href='/posts/create'>create</a>
+         <a href='/posts/create'>[create]</a>
              @foreach ($posts as $post)
                  <div class='post'>
                      <h2 class='title'>
